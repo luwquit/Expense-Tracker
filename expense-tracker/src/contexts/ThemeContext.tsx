@@ -1,0 +1,20 @@
+import { createContext, useContext, type Dispatch, type SetStateAction } from "react";
+
+export type Theme = 'light' | 'dark';
+
+interface ThemeContextType {
+  theme: Theme,
+  setTheme: Dispatch<SetStateAction<Theme>>
+}
+
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error('No Provider in Theme Context');
+  }
+  
+  return context;
+}
