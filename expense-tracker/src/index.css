@@ -6,9 +6,13 @@
   --color-bluish-white: #E2E8F0;
   --color-bluish-gray: #B3C3D7;
   --color-deep-dark: #010D1C;
+  --color-blue-details: #455B8A;
   
-  --color-expense: oklch(50.5% 0.213 27.518);
-  --color-income: oklch(37.8% 0.077 168.94);
+  --color-expense-light: oklch(50.5% 0.213 27.518);
+  --color-income-light: oklch(37.8% 0.077 168.94);
+
+  --color-category-groceries: #7D9C65;
+  --color-category-salary: #CFA936;
 
   --font-inter: 'Inter', sans-serif;
 }
@@ -18,20 +22,25 @@
     @apply bg-bluish-white dark:bg-deep-blue;
     padding-block: calc(var(--spacing) * 3);
     padding-inline: calc(var(--spacing) * 15);
-    cursor: pointer;
-    transition-property: opacity;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */);
-    transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */);
     border-radius: 55px;
+    cursor: pointer;
+    transition-property: opacity, scale;
+    transition-timing-function: var(--ease-in-out);
+    transition-duration: 200ms;
 
     .dark\:bg-deep-blue:where(.dark, .dark *) {
-      background-color: var(--color-deep-blue) /* #253C6D = #253c6d */;
+      background-color: var(--color-deep-blue);
     }
     
     @media (hover: hover) {
       &:hover {
         opacity: 70%;
+        scale: 105%;
       }
     }
+    &:active {
+      scale: 100%;
+    }
+
   }
 }
