@@ -1,12 +1,12 @@
 import { NavLink } from "react-router";
-import { ToggleThemeBtn } from "./ToggleThemeBtn";
+import { ToggleThemeBtn } from "./buttons/ToggleThemeBtn";
 
 export function Header() {
 
   return (
-    <section className="text-text-color dark:text-main-light bg-main-dark dark:bg-dark-gray py-7 px-50">
-      <div className="grid grid-cols-2 items-center bg-main-light dark:bg-light-gray rounded-lg py-3 px-10">
-        <h2 className="font-bold text-4xl">Expense Tracker</h2>
+    <section className="py-7 text-deep-blue dark:text-bluish-white bg-bluish-white/50 dark:bg-deep-dark/50 backdrop-blur-lg fixed top-0 right-0 left-0 px-50 border-deep-blue/10 dark:border-bluish-white/5 border-b ">
+      <div className="grid grid-cols-2 items-center">
+        <h2 className="font-bold text-4xl w-fit">Expense Tracker</h2>
         <div className="flex items-center gap-20 justify-self-end">
           <nav className="font-medium text-xl">
             <NavLink to={'/history'}>View history</NavLink>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useTheme } from "../contexts/ThemeContext"
+import { useTheme } from "../../contexts/ThemeContext"
 
 export function ToggleThemeBtn() {
   const {theme, setTheme} = useTheme();
@@ -24,7 +24,7 @@ export function ToggleThemeBtn() {
   return (
     <button onClick={handleToggleTheme}>
       <img src={theme === 'light' ? 'sun-icon.png' : 'moon-icon.png'}
-      className="size-13" aria-label="Toggle Theme" />
+      className="size-13 cursor-pointer hover:opacity-70 transition-opacity" aria-label="Toggle Theme" />
     </button>
   );
 }

@@ -2,13 +2,36 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-text-color: oklch(12.9% 0.042 264.695);
-  --color-main-dark: oklch(20.8% 0.042 265.755);
-  --color-main-light: oklch(92.9% 0.013 255.508);
-  --color-dark-gray: oklch(37.3% 0.034 259.733);
-  --color-light-gray: oklch(55.1% 0.027 264.364);
+  --color-deep-blue: #253C6D;
+  --color-bluish-white: #E2E8F0;
+  --color-bluish-gray: #B3C3D7;
+  --color-deep-dark: #010D1C;
+  
   --color-expense: oklch(50.5% 0.213 27.518);
   --color-income: oklch(37.8% 0.077 168.94);
 
   --font-inter: 'Inter', sans-serif;
+}
+
+@layer components {
+  .hero-button {
+    @apply bg-bluish-white dark:bg-deep-blue;
+    padding-block: calc(var(--spacing) * 3);
+    padding-inline: calc(var(--spacing) * 15);
+    cursor: pointer;
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */);
+    transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */);
+    border-radius: 55px;
+
+    .dark\:bg-deep-blue:where(.dark, .dark *) {
+      background-color: var(--color-deep-blue) /* #253C6D = #253c6d */;
+    }
+    
+    @media (hover: hover) {
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
 }
