@@ -9,7 +9,9 @@
   --color-blue-details: #455B8A;
   
   --color-expense-light: oklch(50.5% 0.213 27.518);
+  --color-expense-dark: #BD3F43;
   --color-income-light: oklch(37.8% 0.077 168.94);
+  --color-income-dark: #119977;
 
   --color-category-groceries: #7D9C65;
   --color-category-salary: #CFA936;
