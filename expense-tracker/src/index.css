@@ -17,13 +17,14 @@
   --color-category-salary: #CFA936;
 
   --font-inter: 'Inter', sans-serif;
+  --breakpoint-lg: 70.25rem;
+  --breakpoint-md: 51.25rem;
 }
 
 @layer components {
   .hero-button {
     @apply bg-bluish-white dark:bg-deep-blue;
-    padding-block: calc(var(--spacing) * 3);
-    padding-inline: calc(var(--spacing) * 15);
+    
     border-radius: 55px;
     cursor: pointer;
     transition-property: opacity, scale;

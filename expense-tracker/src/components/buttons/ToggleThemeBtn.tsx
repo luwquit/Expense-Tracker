@@ -22,9 +22,9 @@ export function ToggleThemeBtn() {
   }
 
   return (
-    <button onClick={handleToggleTheme}>
+    <button onClick={handleToggleTheme} className="shrink-0">
       <img src={theme === 'light' ? 'sun-icon.png' : 'moon-icon.png'}
-      className="size-13 cursor-pointer hover:opacity-70 transition-opacity" aria-label="Toggle Theme" />
+      className="lg:size-13 md:size-10 size-7 cursor-pointer hover:opacity-70 transition-opacity" aria-label="Toggle Theme" />
     </button>
   );
 }

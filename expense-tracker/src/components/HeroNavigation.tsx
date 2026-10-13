@@ -5,7 +5,7 @@ import { SpendAnalysisBtn } from "./buttons/SpendAnalysisBtn";
 
 export function HeroNavigation() {
   return (
-    <nav className="grid grid-cols-4 justify-items-center mt-15">
+    <nav className="grid md:grid-cols-4 grid-cols-[200px_200px] gap-y-5 justify-items-center justify-center mt-15">
       <AddTransationBtn />
       <AddCategoryBtn />
       <SpendAnalysisBtn />

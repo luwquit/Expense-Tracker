@@ -5,7 +5,7 @@ import { TransactionsHomePage } from "../components/TransactionsHomePage"
 
 export function HomePage() {
   return(
-    <main className="relative py-30">
+    <main className="relative py-30 ">
       <Header />
       <HeroHomePage />
       <QuickActions />
