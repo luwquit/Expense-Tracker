@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { Devider } from "./Devider";
 import { TransactionMessage } from "./TransactionMessage";
 
@@ -6,7 +7,9 @@ export function TransactionsHomePage() {
     <section className="mt-30">
       <div className="flex items-center justify-between px-2">
         <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold text-deep-blue dark:text-bluish-white">Latest transaction</h2>
-        <p className="lg:text-xl md:text-lg text-md font-light text-blue-details dark:text-bluish-gray cursor-pointer transition-opacity hover:opacity-70">See all</p>
+        <NavLink to="/history" className="lg:text-xl md:text-lg text-md font-light text-blue-details dark:text-bluish-gray cursor-pointer transition-opacity hover:opacity-70">
+          See all
+        </NavLink>
       </div>
       <Devider />
       <TransactionMessage />

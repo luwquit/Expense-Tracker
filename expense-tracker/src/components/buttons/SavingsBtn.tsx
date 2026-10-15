@@ -1,15 +1,15 @@
 import { useTheme } from "../../contexts/ThemeContext";
 
-export function DetailsBtn() {
+export function SavingsBtn() {
   const {theme} = useTheme();
   return (
     <div className="flex flex-col w-fit items-center gap-y-3">
       <button className="flex hero-button lg:px-13 px-10 md:py-3 py-2">
-        <img src={theme === 'light' ? "menu-icon-lightTheme.png" : "menu-icon-darkTheme.png"} 
+        <img src={theme === 'light' ? "savings-icon-lightTheme.png" : "savings-icon-darkTheme.png"} 
           className="lg:size-13 size-10 block shrink-0"
         />
       </button>
-      <label className="lg:text-md text-sm">Details</label>
+      <label className="lg:text-md text-sm">Savings</label>
     </div>
     
   );

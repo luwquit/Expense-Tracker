@@ -1,6 +1,6 @@
 import { AddCategoryBtn } from "./buttons/AddCategoryBtn";
 import { AddTransationBtn } from "./buttons/AddTransactionBtn";
-import { DetailsBtn } from "./buttons/DetailsBtn";
+import { SavingsBtn } from "./buttons/SavingsBtn";
 import { SpendAnalysisBtn } from "./buttons/SpendAnalysisBtn";
 
 export function HeroNavigation() {
@@ -9,7 +9,7 @@ export function HeroNavigation() {
       <AddTransationBtn />
       <AddCategoryBtn />
       <SpendAnalysisBtn />
-      <DetailsBtn />
+      <SavingsBtn />
     </nav>
   );
 }
