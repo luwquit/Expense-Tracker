@@ -8,8 +8,9 @@ export function HeroNavigation() {
     <nav className="grid md:grid-cols-4 grid-cols-[200px_200px] gap-y-5 justify-items-center justify-center mt-15">
       <AddTransationBtn />
       <AddCategoryBtn />
-      <SpendAnalysisBtn />
       <SavingsBtn />
+      <SpendAnalysisBtn />
+      
     </nav>
   );
 }

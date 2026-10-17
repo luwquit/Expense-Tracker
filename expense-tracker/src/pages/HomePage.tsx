@@ -1,4 +1,3 @@
-import { AddTransactionWindow } from "../components/AddTransactionWindow"
 import { Header } from "../components/Header"
 import { HeroHomePage } from "../components/HeroHomePage"
 import { PopUpWindowElement } from "../components/PopUpWindowElement"
@@ -15,7 +14,7 @@ export function HomePage() {
       <HeroHomePage />
       <QuickActions />
       <TransactionsHomePage />
-      {popUpWindow && <PopUpWindowElement><AddTransactionWindow /></PopUpWindowElement>}
+      {popUpWindow && <PopUpWindowElement />}
       
     </main>
   )

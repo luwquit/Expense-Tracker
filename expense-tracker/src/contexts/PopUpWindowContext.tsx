@@ -1,6 +1,6 @@
 import { createContext, useContext, type Dispatch, type SetStateAction } from "react";
 
-export type PopUpWindow = boolean;
+export type PopUpWindow = 'transaction' | 'category' | 'savings' | null;
 
 export interface PopUpWindowContextType {
   popUpWindow: PopUpWindow,
