@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
-import { Devider } from "./Devider";
-import { TransactionMessage } from "./TransactionMessage";
+import { Devider } from "../../components/ui/Devider";
+import { TransactionMessage } from "../shared-components/TransactionMessage";
 
 export function TransactionsHomePage() {
   return (

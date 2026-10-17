@@ -1,8 +1,8 @@
 import './App.css'
 import { ThemeContextProvider } from './contexts/ThemeProvider';
-import { HomePage } from './pages/HomePage'
+import { HomePage } from './pages/HomePage/HomePage'
 import { Route, Routes } from "react-router";
-import { TransactionsHistoryPage } from './pages/TransactionsHistoryPage';
+import { TransactionsHistoryPage } from './pages/TransactionHistoryPage/TransactionsHistoryPage';
 import { PopUpWindowContextProvider } from './contexts/PopUpWindowProvider';
 
 function App() {

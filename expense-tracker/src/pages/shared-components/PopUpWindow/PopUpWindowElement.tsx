@@ -1,7 +1,7 @@
 import { 
   Dialog,
   DialogContent,
-} from "./ui/dialog";
+} from "../../../components/ui/dialog";
 import { usePopUpControls } from "@/hooks/PopUpWindowHooks";
 import { usePopUpWindow } from "@/contexts/PopUpWindowContext";
 import { AddTransactionWindow } from "./AddTransactionWindow";

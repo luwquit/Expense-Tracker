@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { ToggleThemeBtn } from "./buttons/ToggleThemeBtn";
+import { ToggleThemeBtn } from "../../components/buttons/ToggleThemeBtn";
 
 export function Header() {
 

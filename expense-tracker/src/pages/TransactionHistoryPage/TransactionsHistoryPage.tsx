@@ -1,8 +1,8 @@
 import { NavLink } from "react-router";
-import { Header } from "../components/Header";
-import { TransactionMessage } from "../components/TransactionMessage";
-import { Devider } from "../components/Devider";
-import { ArrowBackButton } from "../components/buttons/ArrowBackButton";
+import { Header } from "../shared-components/Header";
+import { TransactionMessage } from "@/pages/shared-components/TransactionMessage";
+import { Devider } from "@/components/ui/Devider";
+import { ArrowBackButton } from "@/components/buttons/ArrowBackButton";
 
 export function TransactionsHistoryPage() {
 

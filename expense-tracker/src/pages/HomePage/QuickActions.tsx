@@ -1,4 +1,4 @@
-import { Devider } from "./Devider";
+import { Devider } from "../../components/ui/Devider";
 import { QuickActionsElements } from "./QuickActionsElements";
 
 export function QuickActions() {
