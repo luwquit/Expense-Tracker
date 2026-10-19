@@ -1,12 +1,17 @@
-import { Header } from "@/components/shared-components/Header/Header";
+import { ArrowBackButton } from "@/components/buttons/ArrowBackButton";
+import { Layout } from "@/components/shared-components/Header/Layout";
+import { SavingCardLayout } from "./SavingCardLayout";
 
 export function SavingsPage() {
   return (
     <>
-      <Header />
-      <main>
-
-      </main>
+      <Layout>
+        <div className="flex gap-4 items-center w-fit md:mt-0 mt-10">
+          <ArrowBackButton />
+          <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold text-deep-blue dark:text-bluish-white">Savings</h2>
+        </div>
+        <SavingCardLayout />
+      </Layout>
     </>
   );
 }
