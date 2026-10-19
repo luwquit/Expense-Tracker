@@ -9,37 +9,34 @@ export function AddSavingWindow() {
           You can create new saving category for your goals.
         </DialogDescription>
         <div className="space-y-3">
-          <div className="flex flex-col gap-2 bg-bluish-white dark:bg-deep-blue md:py-3 py-2 px-5 rounded-2xl w-full max-w-xl">
+          <div className="pop-up-input">
             <label>Name</label>
             <input placeholder="e.g. New car" className="ml-5 focus:outline-none" />
           </div>
 
-          <div className="flex flex-col gap-2 bg-bluish-white dark:bg-deep-blue md:py-3 py-2 px-5 rounded-2xl w-full max-w-xl">
+          <div className="pop-up-input">
             <label>Saving Goal</label>
             <input placeholder="$0.00" className="ml-5 focus:outline-none" />
           </div>
 
-          <div className="flex flex-col gap-2 bg-bluish-white dark:bg-deep-blue md:py-3 py-2 px-5 rounded-2xl w-full max-w-xl">
+          <div className="pop-up-input">
             <label>Icon</label>
             <input className="ml-5 focus:outline-none" />
           </div>
 
-          <div className="flex flex-col gap-2 bg-bluish-white dark:bg-deep-blue md:py-3 py-2 px-5 rounded-2xl w-full max-w-xl">
+          <div className="pop-up-input">
             <label>Color</label>
             <input className="ml-5 focus:outline-none" />
           </div>
 
-          <div className="flex flex-col gap-2 bg-bluish-white dark:bg-deep-blue md:py-3 py-2 px-5 rounded-2xl w-full max-w-xl">
+          <div className="pop-up-input">
             <label>Description</label>
             <input placeholder="(optional)" type="text" className="ml-5 focus:outline-none" />
           </div>
         </div>
       </DialogHeader>
       <DialogFooter>
-        <button className="bg-deep-blue dark:bg-bluish-white text-bluish-white dark:text-deep-blue font-bold py-3 px-10 w-fit rounded-4xl
-        active:opacity-70 hover:scale-105 active:scale-100 transition-all cursor-pointer">
-          Create
-        </button>
+        <button className="pop-up-btn">Create</button>
       </DialogFooter>
     </>
   );

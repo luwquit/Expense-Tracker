@@ -1,6 +1,6 @@
 export function TransactionMessage() {
   return (
-    <div className="grid md:grid-cols-[repeat(auto-fit,minmax(30rem,1fr))] grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-y-7 gap-x-2 ">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(33rem,1fr))] gap-y-7 gap-x-2 ">
 
       <div className="flex justify-between items-center gap-x-3 border border-bluish-white/40 dark:border-deep-blue/40 rounded-4xl py-3 px-5">
         <div className="flex gap-5 items-center ">
