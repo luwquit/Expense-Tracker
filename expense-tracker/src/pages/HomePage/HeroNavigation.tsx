@@ -10,7 +10,6 @@ export function HeroNavigation() {
       <AddCategoryBtn />
       <SavingsBtn />
       <SpendAnalysisBtn />
-      
     </nav>
   );
 }

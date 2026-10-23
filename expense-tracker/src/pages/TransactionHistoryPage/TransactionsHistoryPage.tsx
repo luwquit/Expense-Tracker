@@ -8,7 +8,7 @@ export function TransactionsHistoryPage() {
   return (
     <>
       <Layout>
-        <div className="flex gap-4 items-center w-fit md:mt-0 mt-10">
+        <div className="flex gap-4 items-center w-fit">
           <ArrowBackButton />
           <h2 className="lg:text-3xl md:text-2xl text-xl font-semibold text-deep-blue dark:text-bluish-white">Transaction history</h2>
         </div>

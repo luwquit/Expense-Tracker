@@ -1,7 +1,7 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Header } from "./Header";
 import type { ReactNode } from "react";
-import { SidebarProvider } from "../../ui/sidebar";
+import { SidebarInset, SidebarProvider } from "../../ui/sidebar";
 import { HeaderSidebar } from "./HeaderSidebar";
 import { CustomSidebarTrigger } from "./CustomSidebarTrigger";
 import { LayoutSidebarHeader } from "./LayoutSidebarHeader";
@@ -13,7 +13,7 @@ export function Layout({children}: {children: ReactNode}) {
     return (
       <>
         <Header />
-        <main className="relative py-30 lg:px-50 md:px-25 px-10">{children}</main>
+        <main className="relative py-30 lg:px-50 md:px-25 px-10 mt-5">{children}</main>
       </>
     );
   }
@@ -21,10 +21,12 @@ export function Layout({children}: {children: ReactNode}) {
     <>
       <SidebarProvider>
         <HeaderSidebar />
-        <LayoutSidebarHeader><CustomSidebarTrigger /></LayoutSidebarHeader>
-        <main className="relative py-20 px-5 mx-auto">
-          {children}
-        </main>
+        <SidebarInset className="bg-transparent">
+          <LayoutSidebarHeader><CustomSidebarTrigger /></LayoutSidebarHeader>
+          <div className="relative py-17 px-10 mt-10">
+            {children}
+          </div>
+        </SidebarInset>
       </SidebarProvider>
     </>
   );

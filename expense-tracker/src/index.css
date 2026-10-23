@@ -12,16 +12,14 @@
   --color-blue-details: #455B8A;
 
   --color-expense-light: oklch(50.5% 0.213 27.518);
-  --color-expense-dark: #BD3F43;
+  --color-expense-dark: oklch(0.7622 0.133 23.99);
   --color-income-light: oklch(37.8% 0.077 168.94);
-  --color-income-dark: #119977;
+  --color-income-dark: oklch(0.742 0.1114 159.21);
 
   --color-category-groceries: #7D9C65;
   --color-category-salary: #CFA936;
 
   --font-inter: 'Inter', sans-serif;
-  --breakpoint-lg: 70.25rem;
-  --breakpoint-md: 51.25rem;
 }
 
 @layer components {

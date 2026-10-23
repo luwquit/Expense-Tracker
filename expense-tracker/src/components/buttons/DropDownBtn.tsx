@@ -5,8 +5,8 @@ import { DeleteIcon, Edit2Icon, MenuIcon } from "lucide-react";
 export default function DropDownBtn() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="hover:bg-bluish-gray/30 dark:hover:bg-blue-details/10" render={
-        <Button variant="ghost" size="icon" className="cursor-pointer hover:text-deep-blue dark:hover:text-bluish-white">
+      <DropdownMenuTrigger className="hover:bg-bluish-gray/30 dark:hover:bg-blue-details/10 aria-expanded:bg-bluish-gray/30 dark:aria-expanded:bg-blue-details/10" render={
+        <Button variant="ghost" size="icon" className="cursor-pointer text-deep-blue dark:text-bluish-white hover:text-deep-blue dark:hover:text-bluish-white aria-expanded:text-deep-blue dark:aria-expanded:text-bluish-white">
           <MenuIcon className="text-current" />
         </Button>}>
       </DropdownMenuTrigger>
