@@ -1,14 +1,15 @@
+import { NavLink } from "react-router";
 import { useTheme } from "../../contexts/ThemeContext";
 
 export function SpendAnalysisBtn() {
   const {theme} = useTheme();
   return (
     <div className="flex flex-col w-fit items-center gap-y-3">
-      <button className="flex hero-button lg:px-13 px-10 md:py-3 py-2">
+      <NavLink to='/analysis' className="flex hero-button lg:px-13 px-10 md:py-3 py-2">
         <img src={theme === 'light' ? "analysis-icon-lightTheme.png" : "analysis-icon-darkTheme.png"} 
           className="lg:size-13 size-10 block shrink-0"
         />
-      </button>
+      </NavLink>
       <label className="lg:text-md text-sm">Spend Analysis</label>
     </div>
   );
