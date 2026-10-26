@@ -1,3 +1,4 @@
+import { IconPickInput } from "@/components/input/IconPickInput";
 import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 
 export function AddCategoryWindow() {
@@ -14,10 +15,7 @@ export function AddCategoryWindow() {
             <input placeholder="e.g. Petcare" className="ml-5 focus:outline-none" />
           </div>
 
-          <div className="pop-up-input">
-            <label>Icon</label>
-            <input className="ml-5 focus:outline-none" />
-          </div>
+          <IconPickInput />
 
           <div className="pop-up-input">
             <label>Color</label>
