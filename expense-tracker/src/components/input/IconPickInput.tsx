@@ -5,8 +5,6 @@ export function IconPickInput() {
     <div className="pop-up-input">
       <p>Icon</p>
       <IconPicker className="w-fit" />
-      
-      
     </div>
   );
 }

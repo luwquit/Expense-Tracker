@@ -1,4 +1,6 @@
+import { IconPickInput } from "@/components/input/IconPickInput";
 import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../../../components/ui/dialog";
+import { ColorPickInput } from "@/components/input/ColorPickInput";
 
 export function AddSavingWindow() {
   return (
@@ -18,16 +20,11 @@ export function AddSavingWindow() {
             <label>Saving Goal</label>
             <input placeholder="$0.00" className="ml-5 focus:outline-none" />
           </div>
-
-          <div className="pop-up-input">
-            <label>Icon</label>
-            <input className="ml-5 focus:outline-none" />
+          <div className="grid grid-cols-2 gap-3">
+            <IconPickInput />
+            <ColorPickInput />
           </div>
-
-          <div className="pop-up-input">
-            <label>Color</label>
-            <input className="ml-5 focus:outline-none" />
-          </div>
+          
 
           <div className="pop-up-input">
             <label>Description</label>

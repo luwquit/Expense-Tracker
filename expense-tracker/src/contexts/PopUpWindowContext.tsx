@@ -1,10 +1,10 @@
 import { createContext, useContext, type Dispatch, type SetStateAction } from "react";
 
-export type PopUpWindow = 'transaction' | 'category' | 'savings' | null;
+export type PopUpWindowType = 'transaction' | 'category' | 'savings' | null;
 
 export interface PopUpWindowContextType {
-  popUpWindow: PopUpWindow,
-  setPopUpWindow: Dispatch<SetStateAction<PopUpWindow>>
+  popUpWindow: PopUpWindowType,
+  setPopUpWindow: Dispatch<SetStateAction<PopUpWindowType>>
 }
 
 export const PopUpWindowContext = createContext<PopUpWindowContextType | undefined>(undefined);

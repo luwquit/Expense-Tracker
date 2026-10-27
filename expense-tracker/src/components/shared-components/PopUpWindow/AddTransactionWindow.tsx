@@ -25,6 +25,11 @@ export function AddTransactionWindow() {
           </div>
 
           <div className="pop-up-input">
+            <label>Date</label>
+            <input className="ml-5 focus:outline-none" />
+          </div>
+
+          <div className="pop-up-input">
             <label>Description</label>
             <input placeholder="(optional)" type="text" className="ml-5 focus:outline-none" />
           </div>

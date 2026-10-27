@@ -1,3 +1,4 @@
+import { ColorPickInput } from "@/components/input/ColorPickInput";
 import { IconPickInput } from "@/components/input/IconPickInput";
 import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 
@@ -15,12 +16,13 @@ export function AddCategoryWindow() {
             <input placeholder="e.g. Petcare" className="ml-5 focus:outline-none" />
           </div>
 
-          <IconPickInput />
-
-          <div className="pop-up-input">
-            <label>Color</label>
-            <input className="ml-5 focus:outline-none" />
+          <div className="grid grid-cols-2 gap-3">
+            <IconPickInput />
+            <ColorPickInput />
           </div>
+          
+
+          
 
           <div className="pop-up-input">
             <label>Monthly budget</label>

@@ -1,8 +1,10 @@
-export const iconsData: Array<{
-    name: string;
-    categories: string[];
-    tags: string[];
-}> = [
+export interface iconsDataType {
+  name: string;
+  categories: string[];
+  tags: string[];
+};
+
+export const iconsData: Array<iconsDataType> = [
   {
     "name": "a-arrow-down",
     "categories": ["text","design"],
