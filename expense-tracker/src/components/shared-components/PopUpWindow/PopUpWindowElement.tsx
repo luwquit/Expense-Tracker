@@ -13,8 +13,9 @@ export function PopUpWindowElement() {
   const {popUpWindow} = usePopUpWindow();
   
   return (
-    <Dialog open onOpenChange={(popUpWindow) => {
+    <Dialog open onOpenChange={(popUpWindow)  => {
       if (!popUpWindow) closePopUp()
+      
     }}>
       <DialogContent className="bg-linear-to-b from-bluish-white to-bluish-gray dark:from-deep-dark dark:to-deep-blue 
         py-10 px-12 text-deep-blue dark:text-bluish-white"

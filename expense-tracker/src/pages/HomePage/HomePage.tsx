@@ -4,6 +4,7 @@ import { QuickActions } from "./QuickActions"
 import { TransactionsHomePage } from "./TransactionsHomePage"
 import { usePopUpWindow } from "@/contexts/PopUpWindowContext"
 import { Layout } from "@/components/shared-components/Header/Layout"
+import { StatusMessage } from "@/components/shared-components/PopUpWindow/StatusMessage"
 
 export function HomePage() {
   const {popUpWindow} = usePopUpWindow();
@@ -15,6 +16,7 @@ export function HomePage() {
         <QuickActions />
         <TransactionsHomePage />
         {popUpWindow && <PopUpWindowElement />}
+        <StatusMessage></StatusMessage>
       </Layout>
       
     </>

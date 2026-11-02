@@ -8,35 +8,32 @@ import { useIcon } from "@/contexts/IconPickerContext";
 import type { NewCategoryType } from "@/types/types";
 import { NameInput } from "@/components/input/NameInput";
 import { MonthlyBudgetInput } from "@/components/input/MonthlyBudgetInput";
-
+import { useStatusMsg } from "@/contexts/StatusMessageContext";
 
 export function AddCategoryForm() {
   const {hex, setHex} = useColorPick();
   const {iconName, setIconName} = useIcon();
+  const {statusMsg, setStatusMsg} = useStatusMsg();
 
   const [nameInput, setNameInput] = useState<string>('');
   const [budgetInput, setBudgetInput] = useState<string>('');
-  const [status, setStatus] = useState<string>('');
-  
-  console.log(status)
 
   async function addNewCategory(data: NewCategoryType): Promise<void> {
     try {
-      const id = await db.categories.add(data);
-      setStatus(`${nameInput} category was added with id ${id}`);
+      await db.categories.add(data);
+      setStatusMsg(`${nameInput} category was successfully added with!`);
       setNameInput('');
       setBudgetInput('');
       setHex(initialColor);
       setIconName(null);
     } catch (error) {
-      setStatus(`Failed to add ${nameInput}: ${error}`)
-      console.log(`Failed to add ${nameInput}: ${error}`)
+      setStatusMsg(`Failed to add ${nameInput}: ${error}`)
     }
   };
 
   const handleSubmit = async() => {
     if (!nameInput.trim() || !iconName) {
-      setStatus('Enter a name or choose an icon');
+      setStatusMsg('Enter a name or choose an icon');
       return;
     }
 
@@ -60,7 +57,10 @@ export function AddCategoryForm() {
       </div>
 
       <DialogFooter>
-        <button className="pop-up-btn" onClick={handleSubmit}>Create</button>
+        <button className='pop-up-btn disabled:pointer-events-none disabled:opacity-60' 
+        onClick={handleSubmit} disabled={!statusMsg ? false : true}>
+          {!statusMsg ? 'Create' : 'Creating...'}
+        </button>
       </DialogFooter>
     </>
   );

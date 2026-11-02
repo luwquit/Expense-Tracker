@@ -8,6 +8,8 @@ import { SavingsPage } from './pages/SavingsPage/SavingsPage';
 import { SpendAnalysisPage } from './pages/SpendAnalysisPage/SpendAnalysisPage';
 import { ColorPickerProvider } from './contexts/ColorPickerProvider';
 import { IconPickerProvider } from './contexts/IconPickerProvider';
+import { StatusMessageProvider } from './contexts/StatusMessageProvider';
+
 
 function App() {
 
@@ -16,12 +18,14 @@ function App() {
       <PopUpWindowContextProvider>
         <ColorPickerProvider>
           <IconPickerProvider>
-            <Routes>
-              <Route index element={<HomePage />}></Route>
-              <Route path='/history' element={<TransactionsHistoryPage />}></Route>
-              <Route path='/savings' element={<SavingsPage />}></Route>
-              <Route path='/analysis' element={<SpendAnalysisPage />}></Route>
-            </Routes>
+            <StatusMessageProvider>
+              <Routes>
+                <Route index element={<HomePage />}></Route>
+                <Route path='/history' element={<TransactionsHistoryPage />}></Route>
+                <Route path='/savings' element={<SavingsPage />}></Route>
+                <Route path='/analysis' element={<SpendAnalysisPage />}></Route>
+              </Routes>
+            </StatusMessageProvider>
           </IconPickerProvider>
         </ColorPickerProvider>
       </PopUpWindowContextProvider>

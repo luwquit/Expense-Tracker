@@ -20,6 +20,16 @@
   --color-category-salary: #CFA936;
 
   --font-inter: 'Inter', sans-serif;
+
+  --animate-statusMsg: statusMsg 1.5s ease-in-out 1;
+
+  @keyframes statusMsg {
+    0% {opacity: 0%}
+    25% {opacity: 100%}
+    50% {opacity: 100%}
+    75% {opacity: 100%}
+    100% {opacity: 0%}
+  }
 }
 
 @layer components {
