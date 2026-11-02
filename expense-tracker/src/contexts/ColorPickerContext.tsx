@@ -1,6 +1,6 @@
 import { createContext, useContext, type Dispatch, type SetStateAction } from "react";
 
-export const initialColor: string = '#fff';
+export const initialColor: string = '#ffffff';
 
 interface ColorPickerContextType {
   hex: string,

@@ -1,18 +1,7 @@
-import { useEffect, useState } from "react";
+import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 
-export function NameInput({setNameInput}) {
-  const [input, setInput] = useState<string>('');
-
-  useEffect(() => {
-    const timeoutId: ReturnType<typeof setTimeout> = setTimeout(async () => {
-      setNameInput(input)
-    }, 700);
-
-    return () => {
-      clearTimeout(timeoutId);
-    }
-
-  }, [input, setNameInput])
+export function NameInput({nameInput, setNameInput}) {
+  const [input, setInput] = useDebouncedValue<string>(nameInput, setNameInput)
 
   return (
     <>
