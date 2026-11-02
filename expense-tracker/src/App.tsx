@@ -7,6 +7,7 @@ import { PopUpWindowContextProvider } from './contexts/PopUpWindowProvider';
 import { SavingsPage } from './pages/SavingsPage/SavingsPage';
 import { SpendAnalysisPage } from './pages/SpendAnalysisPage/SpendAnalysisPage';
 import { ColorPickerProvider } from './contexts/ColorPickerProvider';
+import { IconPickerProvider } from './contexts/IconPickerProvider';
 
 function App() {
 
@@ -14,12 +15,14 @@ function App() {
     <ThemeContextProvider>
       <PopUpWindowContextProvider>
         <ColorPickerProvider>
-          <Routes>
-            <Route index element={<HomePage />}></Route>
-            <Route path='/history' element={<TransactionsHistoryPage />}></Route>
-            <Route path='/savings' element={<SavingsPage />}></Route>
-            <Route path='/analysis' element={<SpendAnalysisPage />}></Route>
-          </Routes>
+          <IconPickerProvider>
+            <Routes>
+              <Route index element={<HomePage />}></Route>
+              <Route path='/history' element={<TransactionsHistoryPage />}></Route>
+              <Route path='/savings' element={<SavingsPage />}></Route>
+              <Route path='/analysis' element={<SpendAnalysisPage />}></Route>
+            </Routes>
+          </IconPickerProvider>
         </ColorPickerProvider>
       </PopUpWindowContextProvider>
     </ThemeContextProvider>

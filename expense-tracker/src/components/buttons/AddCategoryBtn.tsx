@@ -12,7 +12,7 @@ export function AddCategoryBtn() {
           className="lg:size-13 size-10 block shrink-0"
         />
       </button>
-      <label className="lg:text-md text-sm">Add Category</label>
+      <p className="lg:text-md text-sm">Add Category</p>
     </div>
     
   );

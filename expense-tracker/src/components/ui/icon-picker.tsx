@@ -385,10 +385,10 @@ const IconPicker = React.forwardRef<
     <Popover open={open ?? isOpen} onOpenChange={handleOpenChange} modal={modal}>
       <PopoverTrigger ref={ref} {...props} className="w-fit ml-5 cursor-pointer hover:bg-bluish-gray dark:hover:bg-deep-dark/30 py-1 px-2 rounded-md">
         {children || (
-          <div>
+          <>
             {(value || selectedIcon) ? (
               <>
-                <Icon name={(value || selectedIcon)!} /> {value}
+                <Icon name={(value || selectedIcon)!} />
               </>
             ) : (
               <div className="flex items-center gap-x-1 w-fit">
@@ -396,7 +396,7 @@ const IconPicker = React.forwardRef<
                 {triggerPlaceholder}
               </div>
             )}
-          </div>
+          </>
         )}
       </PopoverTrigger>
       <PopoverContent className="w-64 p-2">

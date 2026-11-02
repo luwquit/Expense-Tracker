@@ -1,6 +1,5 @@
-import { ColorPickInput } from "@/components/input/ColorPickInput";
-import { IconPickInput } from "@/components/input/IconPickInput";
-import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { AddCategoryForm } from "./AddCategoryForm";
 
 export function AddCategoryWindow() {
   return (
@@ -10,29 +9,8 @@ export function AddCategoryWindow() {
         <DialogDescription className="text-deep-blue dark:text-bluish-white mb-2">
           You can add custom category for your tracker.
         </DialogDescription>
-        <div className="space-y-3">
-          <div className="pop-up-input">
-            <label>Name</label>
-            <input placeholder="e.g. Petcare" className="ml-5 focus:outline-none" />
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <IconPickInput />
-            <ColorPickInput />
-          </div>
-          
-
-          
-
-          <div className="pop-up-input">
-            <label>Monthly budget</label>
-            <input placeholder="(optional)" type="text" className="ml-5 focus:outline-none" />
-          </div>
-        </div>
       </DialogHeader>
-      <DialogFooter>
-        <button className="pop-up-btn">Create</button>
-      </DialogFooter>
+      <AddCategoryForm />
     </>
   );
 }

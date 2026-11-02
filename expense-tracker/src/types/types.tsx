@@ -1,34 +1,40 @@
-import type { iconsDataType } from "@/components/ui/icons-data";
+import type { IconName } from "lucide-react/dynamic";
 
 export type TransactionType = 'income' | 'expense' | 'saving';
 
 export type SavingStatusType = 'inProgress' | 'achieved';
 
 export interface Transaction {
-  id: string,
+  id: number,
   amount: number,
   type: TransactionType,
-  category: Category,
+  categoryId: number,
   date: Date,
-  note: string,
+  note?: string,
 }
+
+export type NewTransactionType = Omit<Transaction, "id">;
 
 export interface Category {
-  id: string,
+  id: number,
   name: string,
-  monthlyBudget: number | null,
-  icon: iconsDataType,
+  monthlyBudget?: number,
+  icon: IconName,
   color: string,
 }
 
+export type NewCategoryType = Omit<Category, "id">;
+
 export interface Saving {
-  id: string,
+  id: number,
   name: string,
   savingGoal: number,
-  currentAmount: number | null,
-  icon: iconsDataType,
+  currentAmount: number,
+  icon: IconName,
   color: string,
-  description: string | null,
+  description?: string,
   status: SavingStatusType,
-  achivedDate: Date,
+  achivedDate: Date | null,
 }
+
+export type NewSavingType = Omit<Saving, "id">;
