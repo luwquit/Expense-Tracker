@@ -2,13 +2,13 @@ import { IconPickInput } from "@/components/input/IconPickInput";
 import { ColorPickInput } from "@/components/input/ColorPickInput";
 import { DialogFooter } from "@/components/ui/dialog";
 import { useState } from "react";
-import { db } from "@/data/db";
 import { initialColor, useColorPick } from "@/contexts/ColorPickerContext";
 import { useIcon } from "@/contexts/IconPickerContext";
 import type { NewCategoryType } from "@/types/types";
 import { NameInput } from "@/components/input/NameInput";
-import { MonthlyBudgetInput } from "@/components/input/MonthlyBudgetInput";
+import { MoneyInput } from "@/components/input/MoneyInput";
 import { useStatusMsg } from "@/contexts/StatusMessageContext";
+import { addCategory } from "@/data/categoriesService";
 
 export function AddCategoryForm() {
   const {hex, setHex} = useColorPick();
@@ -16,14 +16,14 @@ export function AddCategoryForm() {
   const {statusMsg, setStatusMsg} = useStatusMsg();
 
   const [nameInput, setNameInput] = useState<string>('');
-  const [budgetInput, setBudgetInput] = useState<string>('');
+  const [moneyInput, setMoneyInput] = useState<string>('');
 
   async function addNewCategory(data: NewCategoryType): Promise<void> {
     try {
-      await db.categories.add(data);
+      addCategory(data);
       setStatusMsg(`${nameInput} category was successfully added with!`);
       setNameInput('');
-      setBudgetInput('');
+      setMoneyInput('');
       setHex(initialColor);
       setIconName(null);
     } catch (error) {
@@ -39,7 +39,7 @@ export function AddCategoryForm() {
 
     await addNewCategory({
       name: nameInput.trim(),
-      monthlyBudget: Number(budgetInput),
+      monthlyBudget: Number(moneyInput),
       icon: iconName,
       color: hex
     })
@@ -48,12 +48,12 @@ export function AddCategoryForm() {
   return (
     <>
       <div className="space-y-3">
-        <NameInput nameInput={nameInput} setNameInput={setNameInput} />
+        <NameInput nameInput={nameInput} setNameInput={setNameInput} placeholder='e.g. Petcare' />
         <div className="grid grid-cols-2 gap-3">
           <IconPickInput />
           <ColorPickInput />
         </div>
-        <MonthlyBudgetInput budgetInput={budgetInput} setBudgetInput={setBudgetInput} />
+        <MoneyInput moneyInput={moneyInput} setMoneyInput={setMoneyInput} placeholder='(optional)'>Monthly budget</MoneyInput>
       </div>
 
       <DialogFooter>
