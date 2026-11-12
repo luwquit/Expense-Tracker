@@ -1,4 +1,5 @@
-import { DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../../../components/ui/dialog";
+import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { AddTransactionForm } from "./AddTransactionForm";
 
 export function AddTransactionWindow() {
   return(
@@ -8,36 +9,8 @@ export function AddTransactionWindow() {
         <DialogDescription className="text-deep-blue dark:text-bluish-white mb-2">
           You can add here your income, expenses and savings as well.
         </DialogDescription>
-        <div className="space-y-3">
-          <div className="pop-up-input">
-            <label>Amount</label>
-            <input placeholder="$0.00" className="ml-5 focus:outline-none" />
-          </div>
-
-          <div className="pop-up-input">
-            <label>Category</label>
-            <input className="ml-5 focus:outline-none" />
-          </div>
-
-          <div className="pop-up-input">
-            <label>Type</label>
-            <input className="ml-5 focus:outline-none" />
-          </div>
-
-          <div className="pop-up-input">
-            <label>Date</label>
-            <input className="ml-5 focus:outline-none" />
-          </div>
-
-          <div className="pop-up-input">
-            <label>Description</label>
-            <input placeholder="(optional)" type="text" className="ml-5 focus:outline-none" />
-          </div>
-        </div>
+        <AddTransactionForm />
       </DialogHeader>
-      <DialogFooter>
-        <button className="pop-up-btn">Submit</button>
-      </DialogFooter>
     </>
   );
 }
