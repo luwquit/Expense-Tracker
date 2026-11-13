@@ -404,7 +404,7 @@ const IconPicker = React.forwardRef<
           <Input
             placeholder={searchPlaceholder}
             onChange={handleSearchChange}
-            className="mb-2"
+            className="py-1 px-2 border border-bluish-gray/40"
           />
         )}
         {categorized && search.trim() === "" && (

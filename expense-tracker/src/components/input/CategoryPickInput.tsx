@@ -37,10 +37,10 @@ export function CategoryPickInput({setCategoryInput}) {
 
   return (
     <>
-      <Field>
+      <Field className="pop-up-input">
         <FieldLabel htmlFor="form-category">Category</FieldLabel>
         <Select items={allItems} value={input} onValueChange={setInput}>
-          <SelectTrigger id="form-category">
+          <SelectTrigger id="form-category" size="sm" className="cursor-pointer p-0 pl-5">
             <SelectValue placeholder='Select category' />
           </SelectTrigger>
           <SelectContent>

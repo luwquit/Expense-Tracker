@@ -5,21 +5,17 @@ import { Calendar } from "../ui/calendar";
 
 export function DateInput({dateInput, setDateInput}) {
   return (
-    <>
     <div className="pop-up-input">
-      <p>Date</p>
+      <p className="font-medium">Date</p>
       <Popover>
         <PopoverTrigger className="flex items-center gap-x-2 cursor-pointer ml-5">
-          <CalendarIcon className="hover:scale-105 active:scale-100" />
+          <CalendarIcon className="hover:scale-105 active:scale-100 transition-transform" />
           {dateInput ? format(dateInput, "PPP") : <span>Pick a date</span>}
         </PopoverTrigger>
         <PopoverContent>
-          <Calendar mode="single" captionLayout="dropdown" selected={dateInput} onSelect={setDateInput} />
+          <Calendar id="form-date" mode="single" captionLayout="dropdown" selected={dateInput} onSelect={setDateInput} />
         </PopoverContent>
       </Popover>
     </div>
-    
-    </>
-    
   );
 }

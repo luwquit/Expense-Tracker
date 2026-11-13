@@ -6,7 +6,7 @@ export function IconPickInput() {
 
   return (
     <div className="pop-up-input">
-      <p>Icon</p>
+      <p className="font-medium">Icon</p>
       <IconPicker value={iconName} className="w-fit" onValueChange={setIconName}  />
     </div>
   );

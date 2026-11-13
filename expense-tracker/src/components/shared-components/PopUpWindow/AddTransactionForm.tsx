@@ -38,7 +38,7 @@ export function AddTransactionForm() {
 
     console.log(typeInput);
     console.log(categoryInput)
-    console.log(format(dateInput, 'PPP'))
+    console.log(format(dateInput, 'PPP')) //зберігати дату як є, при рендері форматувати
   }
 
   return (

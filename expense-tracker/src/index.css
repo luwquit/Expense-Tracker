@@ -4,6 +4,18 @@
 @import "@fontsource-variable/inter";
 @custom-variant dark (&:where(.dark, .dark *));
 
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
 @theme {
   --color-deep-blue: #253C6D;
   --color-bluish-white: #E2E8F0;
@@ -87,7 +99,7 @@
     display: flex;
     flex-direction: column;
     gap: calc(var(--spacing) * 2);
-    padding-block: calc(var(--spacing) * 2);
+    padding-block: calc(var(--spacing) * 2.5);
     padding-inline: calc(var(--spacing) * 5);
     border-radius: calc(var(--radius) * 1.8);
 
@@ -177,6 +189,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --sketch-bg: var(--color-bluish-white);
+  --placeholder-color: var(--color-blue-details);
 }
 
 .dark {
@@ -212,6 +225,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --sketch-bg: var(--color-bluish-gray);
+  --placeholder-color: var(--color-bluish-gray)
 }
 
 @layer base {
