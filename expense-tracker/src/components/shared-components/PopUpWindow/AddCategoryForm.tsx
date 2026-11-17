@@ -20,7 +20,7 @@ export function AddCategoryForm() {
 
   async function addNewCategory(data: NewCategoryType): Promise<void> {
     try {
-      addCategory(data);
+      await addCategory(data);
       setStatusMsg(`${nameInput} category was successfully added with!`);
       setNameInput('');
       setMoneyInput('');
