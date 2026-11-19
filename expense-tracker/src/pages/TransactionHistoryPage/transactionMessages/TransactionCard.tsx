@@ -4,11 +4,11 @@ import { Icon } from "@/components/ui/icon-picker";
 import { useLookup } from "@/contexts/LookupContext";
 import { db } from "@/data/db";
 import type { Transaction } from "@/types/types";
-import { TransactionAmount } from "@/utils/TransactionAmount";
-import { TransactionCardContainer } from "@/utils/TransactionCardContainer";
+import { TransactionAmount } from "@/pages/TransactionHistoryPage/transactionMessages/TransactionAmount";
+import { TransactionCardContainer } from "@/pages/TransactionHistoryPage/transactionMessages/TransactionCardContainer";
 import { format } from "date-fns";
 import { useLiveQuery } from "dexie-react-hooks";
-import { AccordionLayout } from "./AccordionLayout";
+import { AccordionLayout } from "../../../components/shared-components/AccordionCardLayout/AccordionLayout";
 
 export function TransactionCard() {
   const {categoryMap, savingMap} = useLookup();

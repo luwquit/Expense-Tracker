@@ -1,4 +1,4 @@
-import { SavingCard } from "@/components/shared-components/AccordionCardLayout/SavingCard";
+import { SavingCard } from "./SavingCard";
 
 export function SavingCardLayout() {
   return (

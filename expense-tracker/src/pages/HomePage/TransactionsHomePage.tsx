@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { Devider } from "../../components/ui/Devider";
-import { TransactionMessage } from "../../components/shared-components/TransactionMessage";
+import { TransactionLayout } from "../TransactionHistoryPage/transactionMessages/TransactionLayout";
 
 export function TransactionsHomePage() {
   return (
@@ -12,7 +12,7 @@ export function TransactionsHomePage() {
         </NavLink>
       </div>
       <Devider />
-      <TransactionMessage />
+      <TransactionLayout />
     </section>
   );
 }
