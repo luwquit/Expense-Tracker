@@ -1,8 +1,11 @@
 import { NavLink } from "react-router";
 import { Devider } from "../../components/ui/Devider";
-import { TransactionLayout } from "../TransactionHistoryPage/transactionMessages/TransactionLayout";
+import { TransactionLayoutHomePage } from "../TransactionHistoryPage/transactionMessages/TransactionLayoutHomePage";
+import { SeeMoreBtn } from "@/components/buttons/SeeMoreBtn";
+import { useState } from "react";
 
 export function TransactionsHomePage() {
+  const [limitCount, setLimitCount] = useState<number>(5);
   return (
     <section className="mt-30">
       <div className="flex items-center justify-between px-2">
@@ -12,7 +15,10 @@ export function TransactionsHomePage() {
         </NavLink>
       </div>
       <Devider />
-      <TransactionLayout />
+      <TransactionLayoutHomePage limitCount={limitCount} />
+      <div className="flex justify-center mt-10">
+        <SeeMoreBtn setLimitCount={setLimitCount} />
+      </div>
     </section>
   );
 }
