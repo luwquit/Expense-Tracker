@@ -27,6 +27,7 @@ input[type=number]::-webkit-outer-spin-button {
   --color-expense-dark: oklch(0.7622 0.133 23.99);
   --color-income-light: oklch(37.8% 0.077 168.94);
   --color-income-dark: oklch(0.742 0.1114 159.21);
+  --color-saving-light: #FFA500;
 
   --color-category-groceries: #7D9C65;
   --color-category-salary: #CFA936;

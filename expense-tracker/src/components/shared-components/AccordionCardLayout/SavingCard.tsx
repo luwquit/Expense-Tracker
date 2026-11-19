@@ -17,7 +17,7 @@ export function SavingCard() {
   return (
     <>
       {savings.map(saving => (
-        <Card key={saving.id} className="bg-bluish-white dark:bg-deep-blue ring-0 shadow-md h-fit">
+        <Card key={saving.id} className="bg-bluish-white dark:bg-deep-blue ring-0 shadow-md">
           <CardContent className="text-deep-blue dark:text-bluish-white">
             <div className="flex justify-between md:gap-x-5 gap-x-2 items-center">
               <div className="lg:size-17 md:size-14 size-10 rounded-full relative shrink-0" style={{backgroundColor: saving.color}}>

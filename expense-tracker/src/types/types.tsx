@@ -8,7 +8,10 @@ export interface Transaction {
   id: number,
   amount: number,
   type: TransactionType,
-  categoryId: number,
+  category: {
+    id: number,
+    type: 'saving' | 'category'
+  },
   date: Date,
   note?: string,
 }

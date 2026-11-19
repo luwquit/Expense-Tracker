@@ -61,7 +61,10 @@ export function AddTransactionForm() {
     await addNewTransaction({
       amount: Number(amountInput),
       type: typeInput,
-      categoryId: categoryInput.id,
+      category: {
+        id: categoryInput.id,
+        type: categoryInput.type
+      },
       date: dateInput,
       note: description.trim()
     })
