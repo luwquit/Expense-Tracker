@@ -1,4 +1,4 @@
-export const getPercent = (wholeAmount: number, currentAmount: number): number => {
+export const getPercent = (wholeAmount: number, currentAmount: number): string => {
   const percent = (currentAmount / wholeAmount) * 100;
-  return percent;
+  return percent.toFixed(0);
 }

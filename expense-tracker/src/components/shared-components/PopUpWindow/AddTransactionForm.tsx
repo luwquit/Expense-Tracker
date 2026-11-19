@@ -6,7 +6,7 @@ import { TypePickInput } from "@/components/input/TypePickInput";
 import { DialogFooter } from "@/components/ui/dialog";
 import { useStatusMsg } from "@/contexts/StatusMessageContext";
 import { addTransaction } from "@/data/transactionsService";
-import type { NewTransactionType, TransactionType } from "@/types/types";
+import type { TransactionType } from "@/types/types";
 import { useState } from "react";
 
 type CategoryInputType = {
@@ -22,10 +22,29 @@ export function AddTransactionForm() {
   const [dateInput, setDateInput] = useState<Date | undefined>(new Date());
   const {statusMsg, setStatusMsg} = useStatusMsg();
 
+  const handleSubmit = async () => {
+    if (typeInput === 'saving' && categoryInput.type === 'category') {
+      setStatusMsg('You can not add saving amount to category.');
+      return;
+    } else if ((typeInput === 'income' && categoryInput.type === 'saving') || (typeInput === 'expense' && categoryInput.type === 'saving')) {
+      setStatusMsg('You can not add income or expense from your savings.')
+      return;
+    } else if (!amountInput || categoryInput === null || typeInput === null) {
+      setStatusMsg('You need to fill required entry fields.');
+      return;
+    }
 
-  async function addNewTransaction(data: NewTransactionType): Promise<void> {
     try {
-      await addTransaction(data);
+      await addTransaction({
+        amount: Number(amountInput),
+        type: typeInput,
+        category: {
+          id: categoryInput.id,
+          type: categoryInput.type
+        },
+        date: dateInput,
+        note: description.trim()
+      });
       setStatusMsg('Transaction was added!');
       setAmountInput('');
       setDescription('');
@@ -35,39 +54,6 @@ export function AddTransactionForm() {
     } catch (error) {
       setStatusMsg(`Failed to add transaction: ${error}`)
     }
-  }
-
-  const handleSubmit = async () => {
-    if (typeInput === 'saving' && categoryInput.type === 'category') {
-      setStatusMsg('You can not add saving amount to category.');
-      return;
-    };
-
-    if (typeInput === 'income' && categoryInput.type === 'saving') {
-      setStatusMsg('You can not add income from your savings.')
-      return;
-    };
-
-    if (typeInput === 'expense' && categoryInput.type === 'saving') {
-      setStatusMsg('Are you sure you want to add expense from your savings?')
-      return;
-    };
-
-    if (!amountInput || categoryInput === null || typeInput === null) {
-      setStatusMsg('You need to fill required entry fields.');
-      return;
-    }
-
-    await addNewTransaction({
-      amount: Number(amountInput),
-      type: typeInput,
-      category: {
-        id: categoryInput.id,
-        type: categoryInput.type
-      },
-      date: dateInput,
-      note: description.trim()
-    })
   }
 
   return (

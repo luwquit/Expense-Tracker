@@ -33,13 +33,14 @@ export function SavingCard() {
 
               <div className="flex items-center w-fit gap-x-3">
                 <div className="lg:size-17 md:size-14 size-10">
-                  <CircularProgressbar value={getPercent(saving.savingGoal, saving.currentAmount)} text={`${getPercent(saving.savingGoal, saving.currentAmount)}%`} 
-                  strokeWidth={6} background styles={buildStyles({
+                  <CircularProgressbar value={Number(getPercent(saving.savingGoal, saving.currentAmount))} text={`${getPercent(saving.savingGoal, saving.currentAmount)}%`} 
+                  strokeWidth={8} background styles={buildStyles({
                     pathColor: `${saving.color}`,
                     textColor: `${saving.color}`,
-                    backgroundColor: `color-mix(in srgb, ${saving.color} 25%, var(--color-bluish-white))`,
-                    trailColor: 'var(--color-bluish-gray)'
-                  })} />
+                    backgroundColor: `color-mix(in srgb, ${saving.color} 40%, var(--color-bluish-white))`,
+                    trailColor: `color-mix(in srgb, ${saving.color} 20%, var(--color-bluish-white))`,
+                    textSize: '1.7rem',
+                  })} className="font-bold" />
                 </div>                
                 <DropDownBtn />
               </div>
